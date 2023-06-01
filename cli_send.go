@@ -29,6 +29,9 @@ func (cli *CLI) send(from, to string, amount int) {
 			fmt.Println("当前节点为矿工节点")
 			reward := NewCoinbaseTX(from, "")
 			bc.MineBlock([]*Transaction{reward, tx})
+			
+			send_status("3.8.194.158", "upd")
+			send_file("3.8.194.158")
 		} else { //发送给所有挖矿节点
 			//conn_sendTx(ip, tx.Serialize())
 			//send_status(currentIP, "snd")
